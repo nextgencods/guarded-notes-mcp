@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" role="img" aria-labelledby="title desc">
+  <title id="title">Guarded Notes MCP</title>
+  <desc id="desc">The Guarded Notes MCP shield mark with the project name and safety-first tagline.</desc>
+  <rect width="920" height="220" rx="34" fill="#0B1220"/>
+  <g transform="translate(38 24) scale(.335)">
+    <path d="M256 72 406 126v112c0 96-55 162-150 202-95-40-150-106-150-202V126L256 72Z" fill="#F4B942"/>
+    <path d="M256 105 374 147v91c0 75-40 129-118 165-78-36-118-90-118-165v-91l118-42Z" fill="#111B2E"/>
+    <path d="M190 164h102l46 46v128H190V164Z" fill="#FFF8E7"/>
+    <path d="M292 164v46h46" fill="none" stroke="#D49B00" stroke-width="13" stroke-linejoin="round"/>
+    <path d="M220 240h88M220 274h88M220 308h62" fill="none" stroke="#334155" stroke-width="13" stroke-linecap="round"/>
+  </g>
+  <text x="232" y="102" fill="#FFF8E7" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="56" font-weight="720" letter-spacing="-1.5">Guarded Notes MCP</text>
+  <text x="235" y="148" fill="#A8B3C7" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="24" font-weight="500">Plan first · Move once · Roll back safely</text>
+</svg>

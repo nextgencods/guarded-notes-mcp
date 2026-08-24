@@ -1,0 +1,46 @@
+{
+  "name": "guarded-notes-mcp",
+  "version": "1.0.0",
+  "description": "Local-only Apple Notes organizer with safety-gated moves, snapshots, audit logs, and rollback planning.",
+  "author": {
+    "name": "nextgencods",
+    "url": "https://github.com/nextgencods"
+  },
+  "homepage": "https://github.com/nextgencods/guarded-notes-mcp#readme",
+  "repository": "https://github.com/nextgencods/guarded-notes-mcp",
+  "license": "MIT",
+  "keywords": [
+    "apple-notes",
+    "codex-plugin",
+    "privacy",
+    "local-only",
+    "organizer",
+    "mcp",
+    "macos",
+    "safety"
+  ],
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Guarded Notes MCP",
+    "shortDescription": "Safely inspect and organize Apple Notes on your Mac.",
+    "longDescription": "A dependency-free, local-only organizer for Apple Notes. It inventories notes, reuses unchanged cached content, creates safety snapshots, and previews exact folder changes. Every move requires an expiring plan, exact confirmation, and a separate one-use Terminal authorization. It cannot delete notes or edit note content.",
+    "developerName": "nextgencods",
+    "category": "Productivity",
+    "capabilities": [
+      "MCP Servers",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Review my Apple Notes and propose an organization plan.",
+      "Create a safety-backed preview of these note moves.",
+      "Show the exact notes and folders in this move batch."
+    ],
+    "brandColor": "#D49B00",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png",
+    "logoDark": "./assets/logo-dark.png",
+    "websiteURL": "https://github.com/nextgencods/guarded-notes-mcp",
+    "privacyPolicyURL": "https://github.com/nextgencods/guarded-notes-mcp/blob/main/PRIVACY.md"
+  }
+}

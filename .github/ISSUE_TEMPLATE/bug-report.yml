@@ -1,0 +1,108 @@
+name: Bug report
+description: Report a reproducible, non-sensitive defect in Guarded Notes MCP.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a problem. Do not include real note content, titles, identifiers, account or folder names, operation files, authorization values, usernames, or absolute local paths. Report vulnerabilities through the private security link instead.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and read the troubleshooting guide.
+          required: true
+        - label: I replaced all private Notes and Mac data with synthetic placeholders.
+          required: true
+        - label: This is not a security vulnerability.
+          required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Guarded Notes MCP version
+      description: Use a release such as 1.0.0 or a commit SHA.
+      placeholder: 1.0.0
+    validations:
+      required: true
+
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version
+      placeholder: macOS version and build, if known
+    validations:
+      required: true
+
+  - type: input
+    id: node
+    attributes:
+      label: Node.js version
+      description: Paste the sanitized output of `node --version`.
+      placeholder: v22.x.x
+    validations:
+      required: true
+
+  - type: dropdown
+    id: installation
+    attributes:
+      label: Installation method
+      options:
+        - GitHub marketplace source
+        - Local repository checkout
+        - Other MCP client
+    validations:
+      required: true
+
+  - type: input
+    id: tool
+    attributes:
+      label: Tool or workflow phase
+      description: Name the tool or phase without including its arguments.
+      placeholder: personal_notes_organization_status / writing-manifest
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Use disposable, synthetic notes and stable placeholders.
+      placeholder: |
+        1. Create a synthetic note named Example Note.
+        2. Start ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and sanitized error
+      description: Replace every private value with a placeholder. Do not upload runtime files.
+    validations:
+      required: true
+
+  - type: textarea
+    id: verification
+    attributes:
+      label: Checks already performed
+      description: List only checks you actually ran and their results.
+      placeholder: The self-test passed; Automation permission was enabled; no live move was attempted.
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional sanitized context
+      description: Do not attach screenshots of a real Notes library.

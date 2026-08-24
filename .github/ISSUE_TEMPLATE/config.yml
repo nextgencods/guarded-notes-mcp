@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability privately
+    url: https://github.com/nextgencods/guarded-notes-mcp/security/advisories/new
+    about: Do not disclose vulnerabilities or private Notes data in a public issue.
+  - name: Support and troubleshooting
+    url: https://github.com/nextgencods/guarded-notes-mcp/blob/main/SUPPORT.md
+    about: Review support scope, sanitization rules, and troubleshooting steps before opening an issue.

@@ -1,0 +1,23 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+*.log
+*.zip
+*.tar.gz
+coverage/
+dist/
+node_modules/
+
+# Never commit local note data or authorization state.
+Snapshots/
+Operations/
+Cache/
+Content/
+Jobs/
+Manifests/
+move-arm.json
+mutation.lock
+mutation.lock.recovery-*
+mutation-epoch.json
+*.consumed-*

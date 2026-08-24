@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "guarded-notes-mcp": {
+      "command": "node",
+      "args": [
+        "./server.mjs"
+      ],
+      "cwd": ".",
+      "env_vars": [
+        "HOME",
+        "PATH",
+        "TMPDIR"
+      ],
+      "startup_timeout_sec": 10,
+      "tool_timeout_sec": 300
+    }
+  }
+}

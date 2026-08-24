@@ -1,0 +1,80 @@
+name: Feature request
+description: Propose a focused improvement that preserves the project's safety model.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the user problem rather than sharing real Notes data. Requests that weaken a write gate, add deletion/content editing, add network behavior, or expand data access require an explicit major-version security and privacy design.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and documentation for this capability.
+          required: true
+        - label: This request contains only synthetic examples and no private Notes or Mac data.
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+      description: What cannot be accomplished safely today, and who is affected?
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: Describe observable behavior without prescribing unnecessary implementation details.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Include existing tools or manual Notes workflows that were considered.
+
+  - type: dropdown
+    id: data_access
+    attributes:
+      label: Does this require additional data access?
+      options:
+        - No
+        - Yes, additional local metadata
+        - Yes, additional note content
+        - Unsure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: mutation
+    attributes:
+      label: Does this change Apple Notes?
+      options:
+        - No
+        - Yes, within existing folder-create or same-account move scope
+        - Yes, outside the existing mutation scope
+        - Unsure
+    validations:
+      required: true
+
+  - type: textarea
+    id: security
+    attributes:
+      label: Security and privacy impact
+      description: Discuss local storage, MCP output, model exposure, permissions, authorization, rollback, and failure behavior as applicable.
+    validations:
+      required: true
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Synthetic example
+      description: Use names such as Example Note, Test Account, and note-123 only.

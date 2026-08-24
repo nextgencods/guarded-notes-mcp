@@ -1,0 +1,20 @@
+{
+  "name": "nextgencods",
+  "interface": {
+    "displayName": "nextgencods"
+  },
+  "plugins": [
+    {
+      "name": "guarded-notes-mcp",
+      "source": {
+        "source": "local",
+        "path": "./plugins/guarded-notes-mcp"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

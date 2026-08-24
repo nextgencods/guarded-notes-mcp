@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If Guarded Notes MCP supports your work, please cite the repository."
+title: "Guarded Notes MCP"
+type: software
+version: 1.0.0
+date-released: 2026-08-24
+authors:
+  - alias: nextgencods
+repository-code: "https://github.com/nextgencods/guarded-notes-mcp"
+url: "https://github.com/nextgencods/guarded-notes-mcp"
+license: MIT
+keywords:
+  - Apple Notes
+  - Model Context Protocol
+  - Codex plugin
+  - macOS automation
+  - local-first
+  - safety

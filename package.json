@@ -1,0 +1,24 @@
+{
+  "name": "guarded-notes-mcp-repository",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Repository tooling for the Guarded Notes MCP Codex plugin.",
+  "type": "module",
+  "license": "MIT",
+  "author": "nextgencods",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nextgencods/guarded-notes-mcp.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "check": "node --check plugins/guarded-notes-mcp/server.mjs && node --check plugins/guarded-notes-mcp/scripts/arm-moves.mjs && node --check plugins/guarded-notes-mcp/scripts/disarm-moves.mjs && node --check plugins/guarded-notes-mcp/tests/self-test.mjs && node --check scripts/validate-repository.mjs",
+    "test": "npm run test:portable && npm run test:plugin",
+    "test:portable": "node --test tests/portable.test.mjs",
+    "test:plugin": "node plugins/guarded-notes-mcp/tests/self-test.mjs",
+    "validate": "node scripts/validate-repository.mjs",
+    "ci": "npm run check && npm run validate && npm test"
+  }
+}
