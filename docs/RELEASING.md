@@ -28,6 +28,7 @@ patch release.
 ### Scope and history
 
 - Confirm every included change is intended for the release.
+- Confirm `main` is protected by repository rules that require successful CI and block force pushes and branch deletion.
 - Update `CHANGELOG.md` with user-visible behavior, security changes, and
   migration notes.
 - Verify copyright, author, repository, licence, and privacy-policy metadata.
@@ -51,6 +52,8 @@ patch release.
 ### Verification
 
 Run the repository's declared checks and inspect every failure:
+
+- Verify the MCP 2026-07-28 discovery/stateless compatibility test and the legacy initialize test both pass.
 
 ```sh
 npm run check
