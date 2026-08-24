@@ -717,3 +717,64 @@ test("portable MCP smoke test never contacts Apple Notes", () => {
     rmSync(isolatedHome, { recursive: true, force: true });
   }
 });
+
+test("MCP 2026-07-28 discovery and stateless tool listing remain compatible with legacy stdio", () => {
+  const isolatedHome = mkdtempSync(join(tmpdir(), "guarded-notes-modern-home-"));
+  try {
+    const requests = [
+      { jsonrpc: "2.0", id: 1, method: "server/discover" },
+      {
+        jsonrpc: "2.0",
+        id: 2,
+        method: "tools/list",
+        params: {
+          _meta: {
+            "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+            "io.modelcontextprotocol/clientInfo": { name: "portable-modern-test", version: "1" },
+            "io.modelcontextprotocol/clientCapabilities": {},
+          },
+        },
+      },
+      {
+        jsonrpc: "2.0",
+        id: 3,
+        method: "initialize",
+        params: {
+          protocolVersion: "2025-06-18",
+          capabilities: {},
+          clientInfo: { name: "portable-legacy-test", version: "1" },
+        },
+      },
+    ];
+    const completed = spawnSync(process.execPath, [serverPath], {
+      input: `${requests.map((request) => JSON.stringify(request)).join("\n")}\n`,
+      encoding: "utf8",
+      env: { ...process.env, HOME: isolatedHome, TMPDIR: isolatedHome },
+      timeout: 10_000,
+    });
+    assert.equal(completed.status, 0, completed.stderr);
+    const responses = completed.stdout.split("\n").filter(Boolean).map((line) => JSON.parse(line));
+    assert.equal(responses.length, 3);
+
+    const discover = responses.find((response) => response.id === 1)?.result;
+    assert.equal(discover.resultType, "complete");
+    assert.deepEqual(discover.supportedVersions, ["2026-07-28"]);
+    assert.equal(discover.ttlMs, 60_000);
+    assert.equal(discover.cacheScope, "private");
+    assert.equal(discover._meta["io.modelcontextprotocol/serverInfo"].name, "guarded-notes-mcp");
+
+    const modernTools = responses.find((response) => response.id === 2)?.result;
+    assert.equal(modernTools.resultType, "complete");
+    assert.equal(modernTools.ttlMs, 60_000);
+    assert.equal(modernTools.cacheScope, "private");
+    assert.ok(Array.isArray(modernTools.tools));
+    assert.ok(modernTools.tools.length > 0);
+
+    const legacy = responses.find((response) => response.id === 3)?.result;
+    assert.equal(legacy.protocolVersion, "2025-06-18");
+    assert.equal(Object.prototype.hasOwnProperty.call(legacy, "resultType"), false);
+  } finally {
+    rmSync(isolatedHome, { recursive: true, force: true });
+  }
+});
+
