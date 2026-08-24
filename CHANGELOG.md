@@ -11,7 +11,7 @@ the project uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Added
 
-- Added MCP 2026-07-28 stateless discovery and per-request protocol metadata while retaining legacy initialize compatibility.
+- MCP 2026-07-28 stateless discovery and per-request protocol metadata while retaining legacy initialize compatibility.
 - Initial public release of the local stdio MCP server and Codex plugin.
 - Twenty tools for safety inspection, account and folder discovery, bounded
   inventory, note reading, search, incremental organization, snapshots, move
